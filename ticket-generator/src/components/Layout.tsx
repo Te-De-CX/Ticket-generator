@@ -18,7 +18,7 @@ export default function Layout() {
         return () => clearTimeout(timer);
     }, []);
 
-    localStorage.clear();
+    // localStorage.clear();
 
     return (
         <div className=" h-screen flex flex-col">
