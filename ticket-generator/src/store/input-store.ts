@@ -16,7 +16,7 @@ interface CounterState {
 // Create the store with TypeScript types
 const useStore = create<CounterState>()(
   devtools(
-    // persist(
+    persist(
       (set) => ({
         name: null,
         github_name: null,
@@ -35,8 +35,8 @@ const useStore = create<CounterState>()(
           set({ image_src });
         },
       }),
-      // { name: "info-storage" } // Store it in the local storage with this name
-    // )
+      { name: "user-storage" } // Store it in the local storage with this name
+    )
   )
 );
 

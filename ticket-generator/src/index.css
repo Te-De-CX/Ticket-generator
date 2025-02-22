@@ -1,6 +1,66 @@
 @import "tailwindcss";
+@tailwind utilities;
 
-body{
-    background-color: cadetblue;
-}
 
+body {
+    background: url("/src/assets/images/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: MyFont;
+  }
+  
+
+@layer utilities {
+    .glassmorphism {
+      @apply bg-white/5 backdrop-blur-lg rounded-lg border border-white/20 shadow-lg;
+    }
+  }
+
+  @font-face {
+    font-family: 'MyFont';
+    src: url('./assets/fonts/static/Inconsolata-Medium.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MyFont';
+    src: url('./assets/fonts/static/Inconsolata-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MyFont';
+    src: url('./assets/fonts/static/Inconsolata-Regular.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: italic;
+  }
+
+
+  .gradient-text {
+    background: linear-gradient(
+      to right,
+      hsl(7, 71%, 60%), /* Start color */
+      hsl(7, 71%, 70%), /* Intermediate color */
+      hsl(7, 71%, 80%), /* Intermediate color */
+      white /* End color */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mask-icon {
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }

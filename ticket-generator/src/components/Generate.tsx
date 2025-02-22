@@ -5,7 +5,7 @@ export default function () {
     <>
 
         <header>
-            congrats,! your ticket is resdy
+            congrats,! your ticket is ready
         </header>
     </>
   )

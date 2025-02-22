@@ -1,33 +1,51 @@
 import React from 'react';
-import Form from "./Form";
+import Form from './Form';
 import Ticket from './Ticket';
 import useStore from '../store/input-store';
 
 export default function Layout() {
+    const { name, github_name, email, image_src } = useStore();
+    localStorage.clear();
 
-  const { name, github_name, email, image_src, setname, setgithub_name, setemail, setimage_src } = useStore();
-  return (
-    <>
-        <section className='bg-[url("/src/assets/images/background-desktop.png")] h-screen w-screen bg-cover bg-no-repeat bg-center m-0 p-0'>
-          <div className='h-screen w-screen bg-cover bg-no-repeat bg-center m-0 p-0 bg-[url("/src/assets/images/pattern-lines.svg")]' >
-              <div className='h-2/12 w-3/12 absolute right-0 bg-cover bg-no-repeat bg-center m-0 p-0 bg-[url("/src/assets/images/pattern-squiggly-line-top.svg")]' >
-              </div>
-              <div className='h-4/12  w-6/12 absolute left-0 bottom-0 bg-cover bg-no-repeat bg-center m-0 p-0 bg-[url("/src/assets/images/pattern-squiggly-line-bottom-desktop.svg")]' >
-              </div>
-              <div className='flex justify-center items-center top-0 left-0 absolute w-screen h-screen'>
-                <div className='w-30 h-40 right-0 bg-contain flex items-center bg-no-repeat bg-center m-0 p-0 bg-[url("/src/assets/images/pattern-circle.svg")]' >
+    return (
+        <div className="min-h-screen flex flex-col">
+            {/* Top Section */}
+            <div className="relative flex-grow">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-cover bg-no-repeat bg-center bg-[url('/src/assets/images/pattern-lines.svg')]">
+                    {/* Top Squiggly Line */}
+                    <div className="absolute top-0 right-0 h-24 w-1/4 bg-contain bg-no-repeat bg-center bg-[url('/src/assets/images/pattern-squiggly-line-top.svg')]"></div>
+
+                    {/* Circles */}
+                    <div className="absolute top-0 left-0 w-full h-full">
+                        <div className="absolute top-20 left-20 w-24 h-24 bg-contain bg-no-repeat bg-center bg-[url('/src/assets/images/pattern-circle.svg')]"></div>
+                        <div className="absolute top-10 left-10 md:left-24 w-24 h-24 bg-contain bg-no-repeat bg-center bg-[url('/src/assets/images/pattern-circle.svg')]"></div>
+                    </div>
                 </div>
-              </div>
-              <div className='z-50 relative' >
-                <nav className="flex items-center justify-center h-20" >
-                    <img src="/src/assets/images/logo-full.svg" className="h-5" alt="website-header-logo" />
-                </nav>
-                { !name &&  <Form />}
-                { name && <Ticket />}
-              </div>
-          </div>
-        </section>
-    </>
-  )
-}
 
+                {/* Content */}
+                <div className="relative z-50">
+                    {/* Navigation */}
+                    <nav className="flex items-center justify-center h-16">
+                        <img src="/src/assets/images/logo-full.svg" className="h-5" alt="website-header-logo" />
+                    </nav>
+
+                    {/* Form or Ticket */}
+                    <div className="flex justify-center items-center">
+                        {!name && <Form />}
+                        {name && email && github_name && image_src && <Ticket />}
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer (Bottom Pattern) */}
+            <footer className="w-full h-full md:h-48 absolute bottom-0 left-0">
+                {/* Desktop Footer */}
+                <div className="hidden md:block w-full h-full bg-contain bg-no-repeat bg-left-bottom bg-[url('/src/assets/images/pattern-squiggly-line-bottom-desktop.svg')]"></div>
+
+                {/* Mobile/Tablet Footer */}
+                <div className="md:hidden w-8/12 h-full bg-contain bg-no-repeat bg-left-bottom bg-[url('/src/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg')]"></div>
+            </footer>
+        </div>
+    );
+}
