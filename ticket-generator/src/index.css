@@ -64,3 +64,71 @@ body {
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
   }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+/* Ensure the footer is positioned at the bottom-left corner */
+footer {
+  position: fixed; /* Fix the footer to the viewport */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+/* Desktop Footer */
+.footer-desktop {
+  display: none; /* Hidden by default */
+  width: 50%;
+  height: 100%;
+  background-image: url('/public/pattern-squiggly-line-bottom-desktop.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+/* Mobile/Tablet Footer */
+.footer-mobile {
+  width: 66.6667%; /* 8/12 width */
+  height: 100%;
+  background-image: url('/public/pattern-squiggly-line-bottom-mobile-tablet.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+/* Show desktop footer on larger screens */
+@media (min-width: 768px) {
+  .footer-desktop {
+    display: block;
+  }
+  .footer-mobile {
+    display: none;
+  }
+}
+
+/* Show mobile footer on smaller screens */
+@media (max-width: 767px) {
+  .footer-desktop {
+    display: none;
+  }
+  .footer-mobile {
+    display: block;
+  }
+}

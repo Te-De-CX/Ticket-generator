@@ -24,11 +24,11 @@ const Ticket = () => {
                     We've emailed your ticket to <span className="text-[hsl(7,71%,60%)]">{email}</span> and will send updates in the run-up to the event.
                 </p>
             </div>
-            <div className="bg-contain bg-no-repeat bg-center h-48 sm:h-64 md:h-60 bg-[url('/src/assets/images/pattern-ticket.svg')] flex flex-row items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10">
-                <div className="flex flex-col gap-10 sm:gap-4 md:gap-15 relative right-5 md:right-14">
+            <div className="bg-contain bg-no-repeat bg-center h-48 sm:h-44 md:h-60 bg-[url('/src/assets/images/pattern-ticket.svg')] flex flex-row items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10">
+                <div className="flex flex-col gap-7  md:gap-15 relative right-5 md:right-14">
                     <div>
                         <img src="/src/assets/images/logo-full.svg" alt="Logo" className="w-38 sm:w-32 md:w-40 lg:w-48" />
-                        <p className="text-[0.8rem] sm:text-sm md:text-base mt-3 md:mt-2 relative left-8 md:left-10">
+                        <p className="text-[0.8rem] sm:text-sm md:text-base mt-1 md:mt-2 relative left-8 md:left-10">
                             {months[date.getMonth()]} {date.getDate()}, {date.getFullYear()} / Austin, TX
                         </p>
                     </div>
@@ -43,7 +43,7 @@ const Ticket = () => {
                         </div>
                     </div>
                 </div>
-                <div className="rotate-90 text-base md:text-lg lg:text-xl font-bold relative left-8  md:left-16">
+                <div className="rotate-90 text-base md:text-lg lg:text-xl font-bold relative sm:left-8 left-16 md:left-16">
                     #0{ticket_no}
                 </div>
             </div>

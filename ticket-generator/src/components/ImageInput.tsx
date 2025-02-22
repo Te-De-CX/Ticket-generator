@@ -88,13 +88,13 @@ const ImageInput: React.FC<ImageInputProps> = ({ onImageChange }) => {
                     <div className="flex gap-4">
                         <button
                             onClick={handleRemoveImage}
-                            className="text-white text-sm py-1 px-2 glassmorphism underline transition-colors"
+                            className="text-white text-sm h-6  px-2 glassmorphism underline transition-colors"
                         >
                             Remove
                         </button>
                         <button
                             onClick={handleChangeImage}
-                            className="text-white text-xs py-[0.05rem]  px-3 glassmorphism transition-colors"
+                            className="text-white text-xs h-6  px-3 glassmorphism transition-colors"
                         >
                             Change
                         </button>
