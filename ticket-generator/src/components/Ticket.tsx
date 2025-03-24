@@ -43,7 +43,7 @@ const Ticket = () => {
                         </div>
                     </div>
                 </div>
-                <div className="rotate-90 text-base md:text-lg lg:text-xl font-bold relative sm:left-8 left-16 md:left-16">
+                <div className="rotate-90 text-base md:text-lg lg:text-xl font-bold relative sm:left-8 left-13 md:left-16">
                     #0{ticket_no}
                 </div>
             </div>
